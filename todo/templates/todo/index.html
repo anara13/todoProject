@@ -1,15 +1,16 @@
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <title>Django To-do Lists</title>
-</head>
+{% extends 'base.html' %}
 
 {% block content %}
 <!--index.html-->
 {% if object_list %}
 <h3>List of To Do</h3>
 {% endif %}
+<p>
+    <input
+        value="+ Add a new ToDo"
+        type="button"
+        onclick="location.href='{% url "add-To-Do" %}'"/>
+</p>
 <ul>
     {% for todolist in object_list %}
     <li>

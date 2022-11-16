@@ -1,0 +1,25 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <title>Django To-do Lists</title>
+</head>
+
+{% block content %}
+<!--index.html-->
+{% if object_list %}
+<h3>List of To Do</h3>
+{% endif %}
+<ul>
+    {% for todolist in object_list %}
+    <li>
+        <div>
+            {{ todolist.title }}
+        </div>
+    </li>
+    {% empty %}
+    <h4>There is no To Do at the moment</h4>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Delete To Do</h3>
+
+<div>
+    Do you really you want to delete the To Do <strong>{{ object.title }}</strong>?
+</div><br/>
+
+<form method="POST">
+    {% csrf_token %}
+    <input value="Yes" type="submit">
+    <input value="Cancel" type="button" onclick="location.href='{% url "index" %}';">
+</form>
+
+{% endblock %}

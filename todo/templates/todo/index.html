@@ -17,6 +17,7 @@
         <div>
             {{ todolist.title }}
         </div>
+        <input value="Delete" type="button" onclick="location.href='{% url "delete-To-Do" todolist.pk %}'" />
     </li>
     {% empty %}
     <h4>There is no To Do at the moment</h4>

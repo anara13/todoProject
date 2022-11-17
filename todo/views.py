@@ -15,7 +15,7 @@ class ToDoCreate(CreateView):
     fields = ["title"]
     template_name = "todo/addToDo.html"
 
-    def get_context_data(self):
+    def get_context_data(self, **kwargs):
         context = super(ToDoCreate, self).get_context_data()
         context["title"] = "Add a new ToDo"
         return context
